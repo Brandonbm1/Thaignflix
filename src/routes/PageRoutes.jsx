@@ -10,12 +10,12 @@ import Series from "../pages/Series";
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route index path="/" element={<Principal />} />
-      <Route index path="/search" element={<Search />} />
-      <Route index path="/calendar" element={<Calendar />} />
-      <Route index path="/series" element={<Series />} />
-      <Route index path="/movies" element={<Movies />} />
-      <Route index path="/info" element={<Info />} />
+      <Route index path="thaignflix/" element={<Principal />} />
+      <Route index path="thaignflix/search" element={<Search />} />
+      <Route index path="thaignflix/calendar" element={<Calendar />} />
+      <Route index path="thaignflix/series" element={<Series />} />
+      <Route index path="thaignflix/movies" element={<Movies />} />
+      <Route index path="thaignflix/info" element={<Info />} />
     </Routes>
   );
 };
