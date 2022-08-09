@@ -1,5 +1,4 @@
 import { movies } from "../helpers/imagesCarousel";
-import Movie from "./Movie";
 import { Link } from "react-router-dom";
 const Carousel = ({ row }) => {
   return (

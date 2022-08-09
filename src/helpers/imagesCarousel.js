@@ -1,4 +1,4 @@
-const basePath = "src/images/img";
+const basePath = "src/images";
 export const movies = [
   { id: 1, src: `${basePath}/1.png` },
   { id: 2, src: `${basePath}/2.png` },
