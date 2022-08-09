@@ -1,0 +1,242 @@
+@import "./variables/global-variables";
+@import "./variables/info-variables";
+
+.info__container {
+  padding: 10%;
+}
+
+.info {
+  position: relative;
+  display: grid;
+  background-color: $background;
+  border-radius: 15px 15px 0 0;
+  padding: 10px 30px;
+  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
+  &__cover {
+    margin: 20px 0;
+  }
+
+  &__title {
+    font-size: 32px;
+    color: $color-title;
+    transform: 0.5s all ease;
+    animation: title 0.5s ease;
+  }
+  &__description {
+    margin-right: 5px;
+    color: #bdbdbd;
+    text-align: justify;
+  }
+  &__subtitle {
+    font-size: 24px;
+    color: $color-title;
+  }
+  &__tecnologies {
+    margin: 20px 0;
+    &-container {
+      padding: 10px 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 15px;
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid;
+      border-radius: 5px;
+      padding: 10px;
+      transition: background 0.3s ease, transform 0.4s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &-react {
+        border-color: $react-color;
+        &:hover {
+          background: $react-color;
+        }
+        &:hover > svg {
+          color: $background;
+        }
+      }
+      &-sass {
+        border-color: $sass-color;
+        &:hover {
+          background: $sass-color;
+        }
+        &:hover > svg {
+          color: $background;
+        }
+      }
+      &-html {
+        border-color: $html-color;
+        &:hover {
+          background: $html-color;
+        }
+        &:hover > svg {
+          color: $background;
+        }
+      }
+      &-css {
+        border-color: $css-color;
+        &:hover {
+          background: $css-color;
+        }
+        &:hover > svg {
+          color: $background;
+        }
+      }
+      &-js {
+        border-color: $js-color;
+        &:hover {
+          background: $js-color;
+        }
+        &:hover > svg {
+          color: $background;
+        }
+      }
+    }
+    &-item {
+      width: 60px;
+      height: 60px;
+      text-decoration: none;
+      &-react {
+        color: $react-color;
+      }
+      &-sass {
+        color: $sass-color;
+      }
+      &-html {
+        color: $html-color;
+      }
+      &-css {
+        color: $css-color;
+      }
+      &-js {
+        color: $js-color;
+      }
+    }
+  }
+
+  &__footer {
+    min-height: 20px;
+    border-top: 1px solid #888888;
+    background-color: $background;
+    border-radius: 0 0 15px 15px;
+    padding: 10px 30px;
+
+    &-title {
+      font-size: 20px;
+      color: $color-title;
+    }
+  }
+  &__social {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    &-links {
+      margin-top: 10px;
+      grid-column: 1/-1;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+
+      &-item {
+        width: 30px;
+        height: 30px;
+        transition: all 0.3s ease;
+        &:hover {
+          transform: scale(1.3);
+        }
+
+        &-github {
+          color: $github-color;
+        }
+        &-linkedin {
+          color: $linkedin-color;
+        }
+      }
+    }
+  }
+  &__form {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    &-input {
+      padding: 5px 10px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: "Roboto", serif;
+      background-color: #9b9b9b80;
+      color: $color;
+      transition: all 0.3s ease;
+      &:hover {
+        box-shadow: 0 0 2px #fffb;
+      }
+    }
+    &-button {
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 10px;
+      background-color: $color-title;
+      transition: all 0.3s ease;
+      color: $color;
+      &:hover {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  &__portfolio {
+    justify-self: end;
+    align-self: end;
+    min-width: 180px;
+    font-weight: 600;
+    height: 50px;
+    border: none;
+    background-color: $color-title;
+    color: aliceblue;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &:hover {
+      background-color: $color;
+      color: $color-title;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .info__tecnologies {
+    &-container {
+      grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+    &-item {
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .info__social {
+    grid-template-columns: 1fr;
+  }
+  .info__portfolio {
+    justify-self: center;
+  }
+}

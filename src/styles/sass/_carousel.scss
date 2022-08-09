@@ -1,0 +1,80 @@
+.carousel {
+  margin-bottom: 70px;
+  width: 95%;
+  margin: auto;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 10px 0;
+  }
+  &__title {
+    font-size: 30px;
+    text-transform: capitalize;
+  }
+  &__control {
+    background: white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+    &:hover {
+      background: rgb(255, 0, 0);
+    }
+    &.active {
+      background: rgb(255, 0, 0);
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  &__arrow {
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 500;
+    transition: 0.2s ease all;
+    &-left {
+      left: 0;
+    }
+    &-right {
+      right: 0;
+    }
+    &:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+  &__container {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+  }
+  &__movieList {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  &__movie {
+    min-width: 20%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+      transform-origin: center;
+    }
+    &-image {
+      width: 100%;
+      vertical-align: top;
+    }
+  }
+}
