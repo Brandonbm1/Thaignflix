@@ -17,7 +17,7 @@ const Navbar = () => {
       <nav className="nav">
         <ul className="nav__list">
           <NavLink
-            to="/"
+            to="thaignflix/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__logo">
@@ -25,7 +25,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="search"
+            to="thaignflix/search"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="/"
+            to="thaignflix/"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -41,7 +41,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="calendar"
+            to="thaignflix/calendar"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -49,7 +49,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="series"
+            to="thaignflix/series"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -57,7 +57,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="movies"
+            to="thaignflix/movies"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -65,7 +65,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="/info"
+            to="thaignflix/info"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
