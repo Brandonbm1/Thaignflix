@@ -1,10 +1,9 @@
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import Carousel from "./Carousel";
-import { movies } from "../helpers/imagesCarousel";
 import { useEffect, useState, useRef } from "react";
 
-const CarouselLayout = ({ title }) => {
-  const numberPages = Math.ceil(movies.length / 5);
+const CarouselLayout = ({ title, movies, setCover }) => {
+  const numberPages = 4;
   const [controlList, setControlList] = useState([]);
   const row = useRef(null);
   const renderControls = () => {
@@ -91,8 +90,16 @@ const CarouselLayout = ({ title }) => {
         >
           <GoChevronLeft />
         </button>
-
-        <Carousel row={row} />
+        <div className="carousel__container" ref={row}>
+          <div className="carousel__movieList">
+            {movies &&
+              movies.map((movie) => {
+                return (
+                  <Carousel movie={movie} key={movie.id} setCover={setCover} />
+                );
+              })}
+          </div>
+        </div>
 
         <button
           role="button"

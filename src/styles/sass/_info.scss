@@ -2,7 +2,8 @@
 @import "./variables/info-variables";
 
 .info__container {
-  padding: 10%;
+  margin: 5% auto;
+  max-width: 80%;
 }
 
 .info {
@@ -11,9 +12,9 @@
   background-color: $background;
   border-radius: 15px 15px 0 0;
   padding: 10px 30px;
-  // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-template-columns: 1.5fr 1fr;
   gap: 10px;
+  box-sizing: content-box;
   &__cover {
     margin: 20px 0;
   }
@@ -49,6 +50,7 @@
       border-radius: 5px;
       padding: 10px;
       transition: background 0.3s ease, transform 0.4s ease-in-out;
+      cursor: pointer;
       &:hover {
         transform: scale(1.1);
       }

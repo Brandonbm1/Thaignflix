@@ -1,30 +1,39 @@
 // import { useEffect, useState } from "react";
 import CarouselLayout from "../components/CarouselLayout";
 import Cover from "../components/Cover";
-import peakyBlinders from "../images/peaky_blinders.jpeg";
-// import { fetchingData } from "../movies";
-
+import { useEffect, useState } from "react";
+import { useMovie } from "../helpers/useMovie";
+import { popularMoviesUrl, load } from "../helpers/urls";
 // Peliculas recomendadas
 const Principal = () => {
-  // const [data, setData] = useState([]);
-  // const getData = async () => {
-  //   const data = await fetchingData();
-  //   setData(data);
-  // };
-  // const getImage = async () => {
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [coverData, setCoverData] = useState(null);
+  const { loadMovies } = useMovie();
 
-  // }
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-  const coverData = {
-    image: peakyBlinders,
-    title: "peaky blinders",
+  useEffect(() => {
+    loadPopularMovies();
+  }, []);
+
+  const loadPopularMovies = async () => {
+    const data = await loadMovies(popularMoviesUrl);
+    const results = data.results;
+    setPopularMovies(results);
+    setCoverData(results[0]);
   };
+  const loadCover = (movie) => {
+    setCoverData(movie);
+  };
+
   return (
     <div className="container">
       <Cover data={coverData} />
-      <CarouselLayout title="peliculas recomendadas" />
+      {popularMovies && (
+        <CarouselLayout
+          title="peliculas recomendadas"
+          movies={popularMovies}
+          setCover={loadCover}
+        />
+      )}
     </div>
   );
 };

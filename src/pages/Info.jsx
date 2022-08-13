@@ -23,36 +23,21 @@ export default function Info() {
           <div className="info__tecnologies">
             <h4 className="info__subtitle">Tecnologías usadas</h4>
             <div className="info__tecnologies-container">
-              <a
-                href="http://"
-                className="info__tecnologies-link info__tecnologies-link-react"
-              >
+              <div className="info__tecnologies-link info__tecnologies-link-react">
                 <FaReact className="info__tecnologies-item info__tecnologies-item-react" />
-              </a>
-              <a
-                href="http://"
-                className="info__tecnologies-link info__tecnologies-link-sass"
-              >
+              </div>
+              <div className="info__tecnologies-link info__tecnologies-link-sass">
                 <FaSass className="info__tecnologies-item info__tecnologies-item-sass" />
-              </a>
-              <a
-                href="http://"
-                className="info__tecnologies-link info__tecnologies-link-js"
-              >
+              </div>
+              <div className="info__tecnologies-link info__tecnologies-link-js">
                 <SiJavascript className="info__tecnologies-item info__tecnologies-item-js" />
-              </a>
-              <a
-                href="http://"
-                className="info__tecnologies-link info__tecnologies-link-css"
-              >
+              </div>
+              <div className="info__tecnologies-link info__tecnologies-link-css">
                 <IoLogoCss3 className="info__tecnologies-item info__tecnologies-item-css" />
-              </a>
-              <a
-                href="http://"
-                className="info__tecnologies-link info__tecnologies-link-html"
-              >
+              </div>
+              <div className="info__tecnologies-link info__tecnologies-link-html">
                 <IoLogoHtml5 className="info__tecnologies-item info__tecnologies-item-html" />
-              </a>
+              </div>
             </div>
           </div>
         </div>

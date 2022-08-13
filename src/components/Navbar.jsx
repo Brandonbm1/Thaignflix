@@ -5,10 +5,8 @@ import { FaTv } from "react-icons/fa";
 import { BiMovie } from "react-icons/bi";
 import { BsInfoCircle } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import logo from "../images/logo_icon.svg";
 const Navbar = () => {
-  const navigate = useNavigate();
   let activeStyle = {
     boxShadow: "-5px 0 0 #cf0e0e",
   };
@@ -17,7 +15,7 @@ const Navbar = () => {
       <nav className="nav">
         <ul className="nav__list">
           <NavLink
-            to="thaignflix/"
+            to=""
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__logo">
@@ -25,7 +23,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/search"
+            to="search"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -33,7 +31,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/"
+            to=""
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -41,7 +39,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/calendar"
+            to="calendar"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -49,7 +47,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/series"
+            to="series"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -57,7 +55,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/movies"
+            to="movies"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">
@@ -65,7 +63,7 @@ const Navbar = () => {
             </li>
           </NavLink>
           <NavLink
-            to="thaignflix/info"
+            to="info"
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <li className="nav__item">

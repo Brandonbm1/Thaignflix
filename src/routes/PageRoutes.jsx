@@ -4,18 +4,18 @@ import { Routes, Route } from "react-router-dom";
 import Principal from "../pages/Principal";
 import Search from "../pages/Search";
 import Info from "../pages/Info";
-import Movies from "../pages/Movies";
+import LastMovies from "../pages/LastMovies";
 import Calendar from "../pages/Calendar";
-import Series from "../pages/Series";
+import LastSeries from "../pages/LastSeries";
 const PageRoutes = () => {
   return (
     <Routes>
-      <Route index path="thaignflix/" element={<Principal />} />
-      <Route index path="thaignflix/search" element={<Search />} />
-      <Route index path="thaignflix/calendar" element={<Calendar />} />
-      <Route index path="thaignflix/series" element={<Series />} />
-      <Route index path="thaignflix/movies" element={<Movies />} />
-      <Route index path="thaignflix/info" element={<Info />} />
+      <Route index path="/" element={<Principal />} />
+      <Route index path="/search" element={<Search />} />
+      <Route index path="/calendar" element={<Calendar />} />
+      <Route index path="/series" element={<LastSeries />} />
+      <Route index path="/movies" element={<LastMovies />} />
+      <Route index path="/info" element={<Info />} />
     </Routes>
   );
 };

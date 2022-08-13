@@ -1,22 +1,20 @@
 import Cover from "../components/Cover";
 import CarouselLayout from "../components/CarouselLayout";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { useMovie } from "../helpers/useMovie";
-import { nextMoviesUrl } from "../helpers/urls";
-// NEXT MOVIES IN CARTEL
-export default function Calendar() {
-  const [nextMovies, setNextMovies] = useState([]);
+import { lastMoviesUrl } from "../helpers/urls";
+// Ultimas peliculas
+export default function LastMovies() {
+  const [lastMovies, setLastMovies] = useState([]);
   const [coverData, setCoverData] = useState(null);
   const { loadMovies } = useMovie();
-
   useEffect(() => {
-    loadNextMovies();
+    loadLastMovies();
   }, []);
-
-  const loadNextMovies = async () => {
-    const data = await loadMovies(nextMoviesUrl);
+  const loadLastMovies = async () => {
+    const data = await loadMovies(lastMoviesUrl);
     const results = data.results;
-    setNextMovies(results);
+    setLastMovies(results);
     setCoverData(results[0]);
   };
   const loadCover = (movie) => {
@@ -26,11 +24,11 @@ export default function Calendar() {
   return (
     <div className="container">
       <Cover data={coverData} />
-      {nextMovies && (
+      {lastMovies && (
         <CarouselLayout
-          title="Proximos Estrenos"
-          movies={nextMovies}
-          setCover={loadCover}
+          title="ultimas peliculas"
+          movies={lastMovies}
+          setCover={setCoverData}
         />
       )}
     </div>

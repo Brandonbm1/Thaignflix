@@ -1,27 +1,37 @@
-import React from "react";
-
+import { useEffect } from "react";
+import { useState } from "react";
+import { baseUrlImage } from "../helpers/urls";
 const Cover = ({ data }) => {
-  const { image, title } = data;
+  const [title, setTitle] = useState("");
+  const [overview, setOverview] = useState("");
+  const [image, setImage] = useState("");
+  useEffect(() => {
+    renderCover();
+  }, [data]);
+
+  const renderCover = () => {
+    if (data) {
+      data.title ? setTitle(data.title) : setTitle(data.name);
+      setOverview(data.overview);
+      setImage(baseUrlImage + data.backdrop_path);
+    }
+  };
+
   return (
     <header className="cover">
-      <div
-        className="cover__container"
-        style={{ backgroundImage: `url(${image})` }}
-      >
-        <section className="cover__info">
-          <div className="cover__text">
-            <h3 className="cover__title">{title}</h3>
-            <p className="cover__description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-              exercitationem consequuntur accusamus quisquam vero quidem totam
-              ratione asperiores minus laborum autem alias rem animi et corporis
-              nostrum dolores ut eaque incidunt voluptatem, distinctio tempore
-              enim. Sed impedit laboriosam laborum facilis quam itaque a libero?
-              Cum vel atque porro, nisi doloribus minus placeat culpa
-            </p>
-          </div>
-        </section>
-      </div>
+      {data && (
+        <div
+          className="cover__container"
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          <section className="cover__info">
+            <div className="cover__text">
+              <h3 className="cover__title">{title}</h3>
+              <p className="cover__description">{overview}</p>
+            </div>
+          </section>
+        </div>
+      )}
     </header>
   );
 };
