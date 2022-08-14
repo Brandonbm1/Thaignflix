@@ -11,7 +11,7 @@
   display: grid;
   background-color: $background;
   border-radius: 15px 15px 0 0;
-  padding: 10px 30px;
+  padding: 15px 30px 10px;
   grid-template-columns: 1.5fr 1fr;
   gap: 10px;
   box-sizing: content-box;
@@ -20,18 +20,32 @@
   }
 
   &__title {
-    font-size: 32px;
+    font-size: 46px;
     color: $color-title;
     transform: 0.5s all ease;
     animation: title 0.5s ease;
+    margin-bottom: 1rem;
   }
   &__description {
+    max-width: 80%;
     margin-right: 5px;
+    font-size: 1.2rem;
     color: #bdbdbd;
     text-align: justify;
+    & b {
+      color: $react-color;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $color-title;
+      &:visited {
+        color: $color-title;
+      }
+    }
   }
   &__subtitle {
-    font-size: 24px;
+    font-size: 32px;
     color: $color-title;
   }
   &__tecnologies {

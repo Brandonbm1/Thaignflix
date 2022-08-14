@@ -5,7 +5,9 @@ const Carousel = ({ movie, setCover }) => {
     <div className="carousel__movie" onClick={() => setCover(movie)}>
       <img
         src={
-          movie.backdrop_path ? baseUrlImage + movie.backdrop_path : defaultImg
+          movie.backdrop_path
+            ? `${baseUrlImage}/w500${movie.backdrop_path}`
+            : defaultImg
         }
         alt={movie.title}
         className="carousel__movie-image"

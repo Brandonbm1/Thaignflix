@@ -1,19 +1,18 @@
 @import "./variables/cover-variables";
 
 .cover {
-  &__image {
-    width: 200px;
-    height: 200px;
-  }
+  height: 100vh;
+  // margin-bottom: -100px;
   &__info {
-    background-image: linear-gradient(to right, #000, transparent 60%);
     min-height: 100%;
     display: flex;
-    align-items: center;
+    align-items: start;
+    padding-top: 2rem;
   }
   &__text {
     max-width: 40%;
     padding: 40px;
+    // min-height: 100%;
     .cover__title {
       font-size: 48px;
       font-weight: 400;
@@ -29,6 +28,7 @@
     position: relative;
     background-size: cover;
     background-position: top;
-    height: 60vh;
+    // height: 60vh;
+    min-height: 100%;
   }
 }

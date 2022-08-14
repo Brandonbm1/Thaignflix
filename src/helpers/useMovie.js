@@ -10,10 +10,10 @@ export const useMovie = () => {
     return await response.json();
   };
 
-  const searchMovies = async (query) => {
+  const searchMovies = async (query, page) => {
     try {
       if (query) {
-        const url = `${baseUrl}/${searchMoviesUrl}/${apiKey}&query=${query}`;
+        const url = `${baseUrl}/${searchMoviesUrl}/${apiKey}&query=${query}&page=${page}`;
         const response = await fetch(url);
         return await response.json();
       }

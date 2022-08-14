@@ -13,7 +13,7 @@ const Cover = ({ data }) => {
     if (data) {
       data.title ? setTitle(data.title) : setTitle(data.name);
       setOverview(data.overview);
-      setImage(baseUrlImage + data.backdrop_path);
+      setImage(`${baseUrlImage}/w500${data.backdrop_path}`);
     }
   };
 
@@ -22,7 +22,13 @@ const Cover = ({ data }) => {
       {data && (
         <div
           className="cover__container"
-          style={{ backgroundImage: `url(${image})` }}
+          style={{
+            backgroundImage: `
+            linear-gradient(to right, #000, transparent 70%), 
+            linear-gradient(to top, #000, transparent 30%), 
+            url(${image})
+            `,
+          }}
         >
           <section className="cover__info">
             <div className="cover__text">

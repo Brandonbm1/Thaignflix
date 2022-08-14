@@ -1,5 +1,5 @@
 export const baseUrl = "https://api.themoviedb.org/3";
-export const baseUrlImage = "https://image.tmdb.org/t/p/w500";
+export const baseUrlImage = "https://image.tmdb.org/t/p";
 export const popularMoviesUrl = "movie/popular";
 export const nextMoviesUrl = "movie/upcoming";
 export const lastMoviesUrl = "movie/now_playing";

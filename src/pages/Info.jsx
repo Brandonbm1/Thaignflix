@@ -1,9 +1,17 @@
 import { FaReact, FaSass, FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io";
 import { SiJavascript } from "react-icons/si";
-
+import { useState } from "react";
 // ABOUT THIS PROJECT AND HIS OWNER
 export default function Info() {
+  const [mail, setMail] = useState("");
+  const handleChange = (e) => {
+    setMail(e.target.value);
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setMail("");
+  };
   return (
     <section className="container">
       <main className="info__container">
@@ -11,13 +19,13 @@ export default function Info() {
           <div className="info__cover">
             <h3 className="info__title">Thaignflix</h3>
             <p className="info__description">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-              autem obcaecati, reprehenderit velit laboriosam rem exercitationem
-              doloribus id perferendis qui. Quam dolorem eos enim laborum
-              deserunt est magnam quia quibusdam? Velit hic debitis doloremque
-              assumenda reiciendis veniam! Nobis ut non, magni delectus porro
-              cupiditate. Explicabo doloremque repellat adipisci, fuga iusto
-              voluptatum repellendus vel sit nam quod hic illum quaerat autem.
+              Esta es una practica con <b>React</b>js simulando la UI de
+              Netflix, la cual consume la api de{" "}
+              <a href="https://www.themoviedb.org/" target="_blank">
+                The Movie db
+              </a>{" "}
+              la cual nos trae diferentes tipos de peliculas segun la
+              solicitemos. &#x1F60E;
             </p>
           </div>
           <div className="info__tecnologies">
@@ -45,11 +53,13 @@ export default function Info() {
           <div className="info__social">
             <div className="info__contact">
               <h6 className="info__footer-title">Contactame</h6>
-              <form className="info__form">
+              <form className="info__form" onSubmit={handleSubmit}>
                 <input
                   type="email"
                   className="info__form-input"
-                  placeholder="Escribe tu email y me contactare contigo"
+                  placeholder="Escribe tu email"
+                  value={mail}
+                  onChange={handleChange}
                 />
                 <button className="info__form-button">Enviar</button>
               </form>
@@ -57,7 +67,7 @@ export default function Info() {
             <button className="info__portfolio">Portafolio</button>
             <div className="info__social-links">
               <a
-                href="https://www.github.com"
+                href="https://github.com/Brandonbm1/thaignflix"
                 target="_blank"
                 className="info__social-link info__social-link-github"
               >
