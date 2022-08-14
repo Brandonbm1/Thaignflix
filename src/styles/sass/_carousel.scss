@@ -3,6 +3,7 @@
   width: 95%;
   margin: -40vh auto 0 auto;
   position: relative;
+  z-index: 50;
   &__header {
     display: flex;
     justify-content: space-between;

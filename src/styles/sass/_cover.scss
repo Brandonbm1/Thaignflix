@@ -2,7 +2,6 @@
 
 .cover {
   height: 100vh;
-  // margin-bottom: -100px;
   &__info {
     min-height: 100%;
     display: flex;
@@ -30,5 +29,6 @@
     background-position: top;
     // height: 60vh;
     min-height: 100%;
+    z-index: 10;
   }
 }

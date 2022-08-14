@@ -3,10 +3,12 @@ import Movie from "../components/Movie.jsx";
 import { useMovie } from "../helpers/useMovie";
 import { useDebounce } from "../hooks/useDebounce.js";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loader from "../components/Loader";
 //SEARCH A MOVIE
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [movies, setMovies] = useState([]);
+  const [searchRequest, setSearchRequest] = useState({});
   const [isSearching, setIsSearching] = useState(false);
   const [page, setPage] = useState(1);
 
@@ -19,7 +21,11 @@ export default function Search() {
 
   const handleSearchMovie = async (mode) => {
     if (debouncedSearch) {
+      if (mode === "search") {
+        setPage(1);
+      }
       const response = await searchMovies(debouncedSearch, page);
+      setSearchRequest(response);
       setMovies(
         mode === "page"
           ? (prevMovies) => prevMovies.concat(response.results)
@@ -40,13 +46,14 @@ export default function Search() {
     setIsSearching(true);
     handleSearchMovie("page");
   }, [page]);
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <InfiniteScroll
       dataLength={movies.length}
-      hasMore={page === movies.total_pages ? false : true}
+      hasMore={page === searchRequest.total_pages ? false : true}
       next={() => setPage((prevPage) => prevPage + 1)}
-      loader={<h4>loading.....</h4>}
       endMessage={
         <p style={{ textAlign: "center", color: "white" }}>
           <b>Yay! you've seen it all </b>
@@ -55,7 +62,7 @@ export default function Search() {
     >
       <section className="container">
         <div className="search__container">
-          <form className="search">
+          <form className="search" onSubmit={handleSubmit}>
             <h2 className="search__title">Search</h2>
             <input
               type="text"
